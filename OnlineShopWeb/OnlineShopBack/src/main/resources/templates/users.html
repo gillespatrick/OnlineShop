@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+        <link th:rel="stylesheet" type="text/css" th:href="@{webjars/bootstrap/css/bootstrap.min.css}"/> 
+        <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <title>Online Shop Users List</title>
+        <meta http-equiv="Content-Type" content="text/html" charset= "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/}">
+                    <img th:src="@{/images/Onlineshop.png}"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/users}">Users
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/categories}">Categories
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/brands}">Brands
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/products}">Products
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/customers}">Customers
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/shipping}">Shipping
+
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/oders}">Orders
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/reports}">Sales Report
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/articles}">Articles
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/menu}">Menu
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/setting}">Setting
+
+                            </a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="search" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav><br><br>
+        <div class="container-fluid">
+            <center>
+                <div><h1>Manage Users </h1></div>
+            </center>
+        </div><br>
+
+        <div class="container-fluid col-10" >
+            <table class="table table-hover table-bordered table-striped ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">User Id</th>
+                        <th scope="col">Photos</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Enabled</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead> 
+                <tbody>
+                    <tr  th:each = "user : ${listUsers}">
+                        <td>[[${user.id}]]</td>
+                        <td></td>
+                        <td>[[${user.email}]]</td>
+                        <td>[[${user.firstName}]]</td>
+                        <td>[[${user.lastName}]]</td>
+                        <td>[[${user.roles}]]</td>
+                        <td>[[${user.enabled}]]</td>
+                        <td>Edit &nbsp; Delete</td>
+                    </tr>
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+
+        <!<!-- Footer --><br><br>
+        <div class="text-center">
+           <p>OnlineShop Dashboard - Copyright &copy; G&P2023</p>
+        </div>
+    </body>
+</html>
