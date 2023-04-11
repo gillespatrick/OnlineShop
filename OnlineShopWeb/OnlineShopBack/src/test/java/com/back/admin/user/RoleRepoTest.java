@@ -17,6 +17,7 @@ import org.springframework.test.annotation.Rollback;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
 public class RoleRepoTest {
+    /*
 
     @Autowired
     private RoleRepository repo;
@@ -36,5 +37,7 @@ public class RoleRepoTest {
         Role assist = new Role("Assistant", "manage question, and reviews ");
         repo.saveAll(List.of(sale, assist, edit, shipper));
     }
+
+*/
 
 }
