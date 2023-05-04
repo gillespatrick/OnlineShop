@@ -19,8 +19,9 @@ import org.springframework.test.annotation.Rollback;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
-public class UserRepoTest {/*
+public class UserRepoTest {
 
+    /*
     @Autowired
     private UserRepository userRepo;
     @Autowired
@@ -101,7 +102,7 @@ public class UserRepoTest {/*
             userRepo.deleteById(userId);
     }
     
-    
     */
+    
     
 }
