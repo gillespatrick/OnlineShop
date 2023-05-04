@@ -33,12 +33,12 @@ public class UserController {
         List<Role> listRoles = userService.listRoles();
         User user = new User();
         model.addAttribute("user", user);
-        model.addAttribute("listRoles", listRoles);
+      //  model.addAttribute("listRoles", listRoles);
         return "newUser";
     }
 
     // 
-    @PostMapping("/save")
+    @PostMapping("/users/save")
     public String saveUser(User user) {
         System.out.println(user);
         return "redirect:/users";
