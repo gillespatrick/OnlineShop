@@ -33,7 +33,7 @@ public class UserController {
         List<Role> listRoles = userService.listRoles();
         User user = new User();
         model.addAttribute("user", user);
-      //  model.addAttribute("listRoles", listRoles);
+        model.addAttribute("listRoles", listRoles);
         return "newUser";
     }
 
