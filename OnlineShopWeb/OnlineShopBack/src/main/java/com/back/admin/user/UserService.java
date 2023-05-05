@@ -30,4 +30,8 @@ public class UserService {
         return (List<Role>) roleRepo.findAll();
     }
 
+    void save(User user) {
+        userRepo.save(user);
+    }
+
 }
