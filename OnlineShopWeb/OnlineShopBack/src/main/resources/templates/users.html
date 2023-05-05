@@ -88,8 +88,11 @@
         <div class="container-fluid">
             <center>
                 <div><h1>Manage Users | Users List</h1></div><br>
-                <a th:href = "@{/users/new}"> <i class="fa-solid fa-user-plus"> Create New User</i></a>
-
+                <a th:href = "@{/users/new}"> <i class="fa-solid fa-user-plus"> Create New User</i></a><br><br>
+                
+                <div th:if="${message != null}" class="alert alert-success text-center col-10">
+                    [[${message}]]
+                </div>
             </center>
         </div><br>
 
