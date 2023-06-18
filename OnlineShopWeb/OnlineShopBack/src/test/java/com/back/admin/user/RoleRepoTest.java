@@ -28,6 +28,7 @@ public class RoleRepoTest {
         Role saveRole = repo.save(roleAdmin);
         assertThat(saveRole.getId()).isGreaterThan(0);
     }
+    
 
     @Test
     public void testRestRole() {

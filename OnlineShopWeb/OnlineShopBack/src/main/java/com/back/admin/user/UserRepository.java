@@ -2,7 +2,9 @@
 package com.back.admin.user;
 
 import com.onlineshopcommon.entity.User;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 /**
  *
@@ -10,5 +12,6 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface UserRepository extends CrudRepository<User, Integer> {
     
-    
+    @Query("select u from User u where u.email = :email")
+    public User getUserByEmail(@Param("email") String email);
 }

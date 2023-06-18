@@ -21,12 +21,16 @@ import org.springframework.test.annotation.Rollback;
 @Rollback(false)
 public class UserRepoTest {
 
+  
+
     /*
+   
     @Autowired
     private UserRepository userRepo;
     @Autowired
     private TestEntityManager em;
-
+    User user;
+    
     @Test
     public void testCreateUser() {
         Role roleAdmin = em.find(Role.class, 1);
@@ -35,6 +39,7 @@ public class UserRepoTest {
         User saveUser = userRepo.save(user);
         assertThat(saveUser.getId()).isGreaterThan(0);
     }
+    
 
     @Test
     public void testRestUser() {
@@ -102,7 +107,27 @@ public class UserRepoTest {
             userRepo.deleteById(userId);
     }
     
-    */
     
     
+    @Test
+    public void testGetUserByEmail(){
+        String email = "gilles@gmail.com";
+        user = userRepo.getUserByEmail(email);
+        assertThat(user).isNotNull();
+    }
+    
+    
+        @Test
+    public void testUpdateUserRole(){
+        User userId = userRepo.findById(3).get();
+        Role roleship = new Role(4);
+        Role rolesale = new Role(5);
+        userId.getRoles().remove(roleship);
+        userId.getRoles().remove(rolesale);
+        
+        userRepo.save(userId);
+        
+    
+    }
+     */
 }

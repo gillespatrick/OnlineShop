@@ -28,7 +28,7 @@ public class UserController {
         return "users";
     }
 
-    // New User
+    // Display New User Form
     @GetMapping("/users/new")
     public String newUser(Model model) {
         List<Role> listRoles = userService.listRoles();
@@ -39,7 +39,7 @@ public class UserController {
         return "newUser";
     }
 
-    // 
+    // Save The New User
     @PostMapping("/users/save")
     public String saveUser(User user, RedirectAttributes redirectAttributes) {
         System.out.println(user);
@@ -47,5 +47,7 @@ public class UserController {
         redirectAttributes.addFlashAttribute("message", "User has been saved successfully ...");
         return "redirect:/users";
     }
+    
+    
 
 }
